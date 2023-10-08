@@ -52,11 +52,12 @@
     </profiles>
 
 
-    <servers>
-        <server>
-            <id>github</id>
-            <username>otordzdl</username>
-            <password>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</password>
-        </server>
-    </servers>
+        <servers>
+            <server>
+                <id>github</id>
+                <username>otordzdl</username>
+                <password>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</password>
+            </server>
+        </servers>
+
 </settings>
