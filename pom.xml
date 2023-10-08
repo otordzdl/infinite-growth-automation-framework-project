@@ -18,19 +18,6 @@
         </developer>
     </developers>
 
-
-    <repositories>
-        <repository>
-            <id>github</id>
-            <name>Core Automatizacion Infinite Growth</name>
-            <url>https://maven.pkg.github.com/otordzdl/infinite-growth-automation-core</url>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-        </repository>
-    </repositories>
-
-
     <dependencies>
         <dependency>
             <groupId>io.github.otordzdl</groupId>
@@ -63,12 +50,6 @@
         </plugins>
     </build>
 
-        <servers>
-            <server>
-                <id>github</id>
-                <username>otordzdl</username>
-                <password>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</password>
-            </server>
-        </servers>
+
 
 </project>
