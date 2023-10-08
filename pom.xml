@@ -4,6 +4,11 @@
     <artifactId>infinite-growth-automation-framework-project</artifactId>
     <version>1.0</version>
 
+    <properties>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
+    </properties>
+
     <developers>
         <developer>
             <name>Otoniel Rodriguez Delgado</name>
@@ -14,10 +19,25 @@
     </developers>
 
 
-    <properties>
-        <maven.compiler.source>21</maven.compiler.source>
-        <maven.compiler.target>21</maven.compiler.target>
-    </properties>
+    <profiles>
+        <profile>
+            <id>maven</id>
+            <repositories>
+                <repository>
+                    <id>central</id>
+                    <url>https://repo1.maven.org/maven2</url>
+                </repository>
+                <repository>
+                    <id>github</id>
+                    <name>Core Automatizacion Infinite Growth</name>
+                    <url>https://maven.pkg.github.com/otordzdl/infinite-growth-automation-core</url>
+                    <snapshots>
+                        <enabled>true</enabled>
+                    </snapshots>
+                </repository>
+            </repositories>
+        </profile>
+    </profiles>
 
 
     <dependencies>
