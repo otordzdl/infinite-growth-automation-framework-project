@@ -22,8 +22,23 @@ jobs:
       - name: maven-settings
         uses: s4u/maven-settings-action@v2
         with:
-          servers: '[{"id": "github", "username": "dummy", "password": "${GITHUB_TOKEN}"}]'
-          githubServer: false
+         servers: |
+          [
+            {
+              "id": "github",
+              "username": "${{ secrets.GITHUB_USERNAME }}",
+              "password": "${{ secrets.GITHUB_TOKEN }}"
+            }
+          ]
+          repositories: |
+          [
+            {
+              "id": "github",
+              "url": "https://maven.pkg.github.com/otordzdl/infinite-growth-automation-core",
+              "releases": { "enabled": "true" },
+              "snapshots": { "enabled": "true" }
+            }
+          ]
 
       - name: revisar m2
         run: cat  /home/runner/.m2/settings.xml
