@@ -17,32 +17,20 @@ jobs:
         uses: actions/setup-java@v3
         with:
           java-version: '20.0.2+9'
-          distribution: 'temurin'
-#          cache: maven
- #         settings-path: ${{ github.workspace }}
+          distribution: 'adopt'
+         
+      - name: maven-settings
+        uses: s4u/maven-settings-action@v2
+        with:
+          servers: '[{"id": "github", "username": "dummy", "password": "${GITHUB_TOKEN}"}]'
+          githubServer: false
 
-      - name: Modificar setting
-        run: cp -f $GITHUB_WORKSPACE/settings.xml /home/runner/.m2/settings.xml
-
-
-#      - name: maven-settings
-#        uses: s4u/maven-settings-action@v2
-#        with:
-#          servers: '[{"id": "github", "username": "dummy", "password": "${GITHUB_TOKEN}"}]'
-#          githubServer: true
-#
       - name: revisar m2
         run: cat  /home/runner/.m2/settings.xml
 
 
-      - name: Ver setting otra vez
-        run: cat $GITHUB_WORKSPACE/settings.xml
-
-      - name: Build with Maven
-        run: mvn clean install --file pom.xml
-
       - name: Run tests
         run: mvn test
-#        env:
-#          GITHUB_TOKEN: ${{ secrets.MAVEN_GITHUB_TOKEN }}
-#          GITHUB_USERNAME: ${{ secrets.MAVEN_GITHUB_USERNAME }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.MAVEN_GITHUB_TOKEN }}
+          GITHUB_USERNAME: ${{ secrets.MAVEN_GITHUB_USERNAME }}
