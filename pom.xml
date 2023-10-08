@@ -19,17 +19,16 @@
     </developers>
 
 
-
-            <repositories>
-                 <id>github</id>
-                    <name>Core Automatizacion Infinite Growth</name>
-                    <url>https://maven.pkg.github.com/otordzdl/infinite-growth-automation-core</url>
-                    <snapshots>
-                        <enabled>true</enabled>
-                    </snapshots>
-                </repository>
-            </repositories>
-  
+    <repositories>
+        <repository>
+            <id>github</id>
+            <name>Core Automatizacion Infinite Growth</name>
+            <url>https://maven.pkg.github.com/otordzdl/infinite-growth-automation-core</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
 
 
     <dependencies>
@@ -59,7 +58,7 @@
                     <suiteXmlFiles>
                         <suiteXmlFile>testng.xml</suiteXmlFile>
                     </suiteXmlFiles>
-                    </configuration>
+                </configuration>
             </plugin>
         </plugins>
     </build>
