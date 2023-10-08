@@ -20,12 +20,14 @@ jobs:
           distribution: 'temurin'
           cache: maven
           settings-path: ${{ github.workspace }}
+          run: echo $GITHUB_WORKSPACE/settings.xml
 
       - name: maven-settings
         uses: s4u/maven-settings-action@v2
         with:
           servers: '[{"id": "github", "username": "${GITHUB_USERNAME}", "password": "${GITHUB_TOKEN}"}]'
           githubServer: false
+          run: echo $GITHUB_WORKSPACE/settings.xml
 
 #      - name: Build with Maven
 #        run: mvn clean install --file pom.xml
