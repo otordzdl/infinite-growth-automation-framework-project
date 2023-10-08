@@ -63,4 +63,12 @@
         </plugins>
     </build>
 
+        <servers>
+            <server>
+                <id>github</id>
+                <username>otordzdl</username>
+                <password>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</password>
+            </server>
+        </servers>
+
 </project>
