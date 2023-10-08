@@ -19,17 +19,23 @@ jobs:
           java-version: '20.0.2+9'
           distribution: 'adopt'
          
-      - name: maven-settings
-        uses: s4u/maven-settings-action@v2
+ #     - name: maven-settings
+  #      uses: s4u/maven-settings-action@v2
+   #     with:
+    #     servers: |
+     #      [{
+      #        "id": "github",
+       #       "username": "${{ secrets.GITHUB_USERNAME }}",
+        #      "password": "${{ secrets.GITHUB_TOKEN }}",
+         #     "url": "https://maven.pkg.github.com/otordzdl/infinite-growth-automation-core"            
+          #  }]
+
+      - name: maven-settings-xml-action
+        uses: whelk-io/maven-settings-xml-action@v20
         with:
-         servers: |
-           [{
-              "id": "github",
-              "username": "${{ secrets.GITHUB_USERNAME }}",
-              "password": "${{ secrets.GITHUB_TOKEN }}",
-              "url": "https://maven.pkg.github.com/otordzdl/infinite-growth-automation-core"            
-            }]
-          
+          repositories: '[{ "id": "github", "url": "https://maven.pkg.github.com/otordzdl/infinite-growth-automation-core" }]'
+          servers: '[{ "id": "github", "username": "${{ secrets.GITHUB_USERNAME }}", "password": "${{ secrets.GITHUB_TOKEN }}" }]'
+         
 
       - name: revisar m2
         run: cat  /home/runner/.m2/settings.xml
