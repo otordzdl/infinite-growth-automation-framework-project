@@ -19,16 +19,9 @@
     </developers>
 
 
-    <profiles>
-        <profile>
-            <id>maven</id>
+
             <repositories>
-                <repository>
-                    <id>central</id>
-                    <url>https://repo1.maven.org/maven2</url>
-                </repository>
-                <repository>
-                    <id>github</id>
+                 <id>github</id>
                     <name>Core Automatizacion Infinite Growth</name>
                     <url>https://maven.pkg.github.com/otordzdl/infinite-growth-automation-core</url>
                     <snapshots>
@@ -36,8 +29,7 @@
                     </snapshots>
                 </repository>
             </repositories>
-        </profile>
-    </profiles>
+  
 
 
     <dependencies>
