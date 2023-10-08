@@ -43,6 +43,6 @@ jobs:
 
       - name: Run tests
         run: mvn test
-        env:
-          GITHUB_TOKEN: ${{ secrets.MAVEN_GITHUB_TOKEN }}
-          GITHUB_USERNAME: ${{ secrets.MAVEN_GITHUB_USERNAME }}
+#        env:
+#          GITHUB_TOKEN: ${{ secrets.MAVEN_GITHUB_TOKEN }}
+#          GITHUB_USERNAME: ${{ secrets.MAVEN_GITHUB_USERNAME }}
