@@ -27,8 +27,7 @@ jobs:
               "id": "github",
               "username": "${{ secrets.GITHUB_USERNAME }}",
               "password": "${{ secrets.GITHUB_TOKEN }}",
-              "url": "https://maven.pkg.github.com/otordzdl/infinite-growth-automation-core",
-            
+              "url": "https://maven.pkg.github.com/otordzdl/infinite-growth-automation-core"            
             }]
           
 
