@@ -32,4 +32,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.MAVEN_GITHUB_TOKEN }}
           GITHUB_USERNAME: ${{ secrets.MAVEN_GITHUB_USERNAME }}
+          DEVICE_FARM_API_KEY: ${{ secrets.DEVICE_FARM_API_KEY }}
+          DEVICE_FARM_USER: ${{ secrets.DEVICE_FARM_USER }}
 
