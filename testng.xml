@@ -42,8 +42,9 @@
                 <parameter name="url" value="https://www.saucedemo.com/"/>
                 <parameter name="user" value="standard_user"/>
                 <parameter name="password" value="secret_sauce"/>
-                <parameter name="browser" value="chrome"/>
+
             </class>
+            <parameter name="browser" value="chrome"/>
         </classes>
 
 
@@ -57,8 +58,9 @@
                 <parameter name="url" value="https://www.saucedemo.com/"/>
                 <parameter name="user" value="locked_out_user"/>
                 <parameter name="password" value="secret_sauce"/>
-                <parameter name="browser" value="edge"/>
+
             </class>
+            <parameter name="browser" value="edge"/>
         </classes>
 
     </test>
@@ -71,8 +73,9 @@
                 <parameter name="url" value="https://www.saucedemo.com/"/>
                 <parameter name="user" value="problem_user"/>
                 <parameter name="password" value="secret_sauce"/>
-                <parameter name="browser" value="firefox"/>
+
             </class>
+            <parameter name="browser" value="firefox"/>
         </classes>
 
     </test>
@@ -85,8 +88,9 @@
                 <parameter name="url" value="https://www.saucedemo.com/"/>
                 <parameter name="user" value="performance_glitch_user"/>
                 <parameter name="password" value="secret_sauce"/>
-                <parameter name="browser" value="safari"/>
+
             </class>
+            <parameter name="browser" value="safari"/>
         </classes>
 
     </test>
@@ -100,8 +104,9 @@
                 <parameter name="url" value="https://www.saucedemo.com/"/>
                 <parameter name="user" value="standard_user"/>
                 <parameter name="password" value="secre"/>
-                <parameter name="browser" value="chrome"/>
+
             </class>
+            <parameter name="browser" value="chrome"/>
         </classes>
 
     </test>
@@ -114,25 +119,27 @@
                 <parameter name="url" value="https://www.saucedemo.com/"/>
                 <parameter name="user" value=""/>
                 <parameter name="password" value=""/>
-                <parameter name="browser" value="chrome"/>
+
             </class>
+            <parameter name="browser" value="chrome"/>
         </classes>
 
     </test>
-        <test name="No Login por usuario bloqueado">
-            <classes>
-                <class name="tests.LoginWebTest">
-                    <methods>
-                        <include name="loginFallido"/>
-                    </methods>
-                    <parameter name="url" value="https://www.saucedemo.com/"/>
-                    <parameter name="user" value="locked_out_user"/>
-                    <parameter name="password" value="secret_sauce"/>
-                    <parameter name="browser" value="edge"/>
-                </class>
-            </classes>
+    <test name="No Login por usuario bloqueado">
+        <classes>
+            <class name="tests.LoginWebTest">
+                <methods>
+                    <include name="loginFallido"/>
+                </methods>
+                <parameter name="url" value="https://www.saucedemo.com/"/>
+                <parameter name="user" value="locked_out_user"/>
+                <parameter name="password" value="secret_sauce"/>
 
-        </test>
+            </class>
+            <parameter name="browser" value="edge"/>
+        </classes>
+
+    </test>
 
 
     <test name="Validar que deje agregar varios productos">
@@ -145,9 +152,10 @@
             <parameter name="url" value="https://www.saucedemo.com/"/>
             <parameter name="user" value="standard_user"/>
             <parameter name="password" value="secret_sauce"/>
-            <parameter name="browser" value="chrome"/>
+
             <parameter name="products" value="Sauce Labs Onesie|Sauce Labs Bike Light|Sauce Labs Fleece Jacket"/>
         </classes>
+        <parameter name="browser" value="chrome"/>
     </test>
 
 
@@ -160,9 +168,10 @@
                 <parameter name="url" value="https://www.saucedemo.com/"/>
                 <parameter name="user" value="standard_user"/>
                 <parameter name="password" value="secret_sauce"/>
-                <parameter name="browser" value="chrome"/>
+
                 <parameter name="products" value="Sauce Labs Onesie|Sauce Labs Bike Light|Sauce Labs Fleece Jacket"/>
             </class>
+            <parameter name="browser" value="chrome"/>
         </classes>
 
     </test>
@@ -177,9 +186,11 @@
                 <parameter name="url" value="https://www.saucedemo.com/"/>
                 <parameter name="user" value="standard_user"/>
                 <parameter name="password" value="secret_sauce"/>
-                <parameter name="browser" value="chrome"/>
+
                 <parameter name="products" value="Sauce Labs Onesie|Sauce Labs Bike Light|Sauce Labs Fleece Jacket"/>
+
             </class>
+            <parameter name="browser" value="chrome"/>
         </classes>
 
     </test>
