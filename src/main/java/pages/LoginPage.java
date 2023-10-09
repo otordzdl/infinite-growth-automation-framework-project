@@ -2,6 +2,7 @@ package pages;
 
 import io.github.otordzdl.infinitegrowth.core.selenium.Wrapper;
 import org.openqa.selenium.By;
+import org.testng.Assert;
 
 public class LoginPage {
     private Wrapper wrapper;
@@ -9,6 +10,7 @@ public class LoginPage {
     private By passwordField=By.id("password");
     private By loginButton=By.id("login-button");
 
+    private By errorMessage=By.xpath("//*[@data-test='error']");
 
     public LoginPage(Wrapper wrapper){
         this.wrapper=wrapper;
@@ -18,6 +20,10 @@ public class LoginPage {
         wrapper.fillFieldWithText(usernameField,user);
         wrapper.fillFieldWithText(passwordField,password);
         wrapper.clickInElement(loginButton);
+    }
+
+    public void validateErrorLogin(){
+        Assert.assertTrue(wrapper.reviewIfElementIsDisplayed(errorMessage));
     }
 
     public Boolean validateLogin(){

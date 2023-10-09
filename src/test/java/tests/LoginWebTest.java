@@ -7,7 +7,7 @@ import org.testng.annotations.*;
 import pages.LoginPage;
 
 public class LoginWebTest extends BaseWebTest {
-    @Test(description="Prueba de Login Exitoso")
+    @Test(description="Login exitoso")
     @Parameters({"url","user","password"})
     public void loginExitoso(String url,String user,String password){
 
@@ -23,6 +23,23 @@ public class LoginWebTest extends BaseWebTest {
         test.log(Status.PASS, "La prueba fue exitosa.");
 
     }
+
+
+    @Test(description="Login fallido por contraseña incorrecta")
+    @Parameters({"url","user","password"})
+    public void loginFallido(String url,String user,String password){
+
+
+        wrapper.navigateTo(url);
+
+        LoginPage loginPage= new LoginPage(wrapper);
+
+        loginPage.enterCredentials(user,password);
+        loginPage.validateErrorLogin();
+        test.log(Status.PASS, "La prueba fue exitosa.");
+
+    }
+
 
     @Test
     public void pruebaFallido(){

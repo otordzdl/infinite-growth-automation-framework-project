@@ -10,6 +10,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+        DEVICE_FARM_API_KEY: ${{ secrets.DEVICE_FARM_API_KEY }}
+        DEVICE_FARM_USER: ${{ secrets.DEVICE_FARM_USER }}
 
     steps:
       - uses: actions/checkout@v3
@@ -27,9 +30,6 @@ jobs:
           repositories: '[{ "id": "github", "url": "https://maven.pkg.github.com/otordzdl/infinite-growth-automation-core" }]'
           servers: '[{ "id": "github", "username": "${{ secrets.MAVEN_GITHUB_USERNAME }}", "password": "${{ secrets.MAVEN_GITHUB_TOKEN }}" }]'
 
-      - name: Revisar pom
-        run: cat /home/runner/.m2/settings.xml
-      
       - name: Run tests
         run: mvn test
 
@@ -40,9 +40,5 @@ jobs:
           name: reporte-extent.html
           path: ${{ github.workspace }}
           retention-days: 20
-        env:
-          TOKEN: ${{ secrets.MAVEN_GITHUB_TOKEN }}
-          GITHUB_USERNAME: ${{ secrets.MAVEN_GITHUB_USERNAME }}
-          DEVICE_FARM_API_KEY: ${{ secrets.DEVICE_FARM_API_KEY }}
-          DEVICE_FARM_USER: ${{ secrets.DEVICE_FARM_USER }}
+
 
