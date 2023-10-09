@@ -151,7 +151,7 @@
     </test>
 
 
-    <test name="Prueba E2E Exitosa">
+    <test name="Validar que permita remover productos agregados y se actualice el numero de productos en carrito">
         <classes>
             <class name="tests.CarritoTest">
                 <methods>
