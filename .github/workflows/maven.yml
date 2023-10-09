@@ -13,7 +13,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - name: Set up JDK 21
+      - name: Set up JDK 17
         uses: actions/setup-java@v3
         with:
 
@@ -25,11 +25,22 @@ jobs:
         uses:  whelk-io/maven-settings-xml-action@v21
         with:
           repositories: '[{ "id": "github", "url": "https://maven.pkg.github.com/otordzdl/infinite-growth-automation-core" }]'
-          servers: '[{ "id": "github", "username": "some.user", "password": "${GITHUB_TOKEN}" }]'
+          servers: '[{ "id": "github", "username": "${GITHUB_USERNAME}", "password": "${GITHUB_TOKEN}" }]'
 
+      - name: Revisar pom
+        run: cat /home/runner/.m2/settings.xml
+      
       - name: Run tests
         run: mvn test
+
+      - name: Upload extent report
+        uses: actions/upload-artifact@v3
+        with:
+          name: reporte-extent.html
+          retention-days: 20
         env:
           GITHUB_TOKEN: ${{ secrets.MAVEN_GITHUB_TOKEN }}
           GITHUB_USERNAME: ${{ secrets.MAVEN_GITHUB_USERNAME }}
+          DEVICE_FARM_API_KEY: ${{ secrets.DEVICE_FARM_API_KEY }}
+          DEVICE_FARM_USER: ${{ secrets.DEVICE_FARM_USER }}
 
