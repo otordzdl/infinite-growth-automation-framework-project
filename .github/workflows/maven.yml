@@ -29,6 +29,13 @@ jobs:
 
       - name: Run tests
         run: mvn test
+
+      - name: Upload extent report
+        uses: actions/upload-artifact@v3
+        with:
+          name: reporte-extent.html
+          retention-days: 20
+        
         env:
           GITHUB_TOKEN: ${{ secrets.MAVEN_GITHUB_TOKEN }}
           GITHUB_USERNAME: ${{ secrets.MAVEN_GITHUB_USERNAME }}
