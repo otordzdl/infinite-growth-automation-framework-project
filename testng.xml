@@ -135,7 +135,7 @@
         </test>
 
 
-    <test name="Prueba E2E Exitosa">
+    <test name="Validar que deje agregar varios productos">
         <classes>
             <class name="tests.CarritoTest">
                 <methods>
