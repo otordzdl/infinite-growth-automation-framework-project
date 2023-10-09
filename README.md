@@ -166,10 +166,14 @@ el cual mostrará un reporte como el siguiente:
 ## CICD
 Se tiene un workflow que permite la integración a un pipeline y realizar la ejecución de los scripts. Aquí es importante que el modo de ejecución sea en device_farm para el caso de pruebas en navegadores
 
-![image](https://github.com/otordzdl/infinite-growth-automation-framework-project/assets/27450684/221750e6-6351-4f6d-b3ed-7fdc6a34dfc0)
+![image](https://github.com/otordzdl/infinite-growth-automation-framework-project/assets/27450684/0d4d278d-b747-4c2d-aff7-936d2d2d255d)
 
-Los workflows aparece como fallados debido a que hay scripts que estan forzados a fallar:
-![image](https://github.com/otordzdl/infinite-growth-automation-framework-project/assets/27450684/d922472f-f88c-4e81-8048-d41cb477e451)
+Los workflows aparecen como fallados debido a que hay scripts que estan forzados a fallar:
+![image](https://github.com/otordzdl/infinite-growth-automation-framework-project/assets/27450684/76d6fed6-11b3-43cd-8189-20db50b922c4)
+
+El workflow esta diseñado para generar como **Artefacto el ExtentReport**:
+![image](https://github.com/otordzdl/infinite-growth-automation-framework-project/assets/27450684/4583d7c0-6e6a-4940-ad9e-c5e87a6b20df)
+
 
 
 
