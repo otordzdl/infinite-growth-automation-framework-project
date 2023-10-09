@@ -38,6 +38,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: reporte-extent.html
+          path: ${{ github.workspace }}
           retention-days: 20
         env:
           TOKEN: ${{ secrets.MAVEN_GITHUB_TOKEN }}
