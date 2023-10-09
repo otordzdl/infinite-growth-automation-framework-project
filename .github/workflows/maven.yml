@@ -33,10 +33,10 @@ jobs:
       - name:  Generate settings.xml for Maven Builds
         uses:  whelk-io/maven-settings-xml-action@v21
         with:
-          servers: '[{"id": "github", "username": "${{ secrets.GITHUB_USERNAME }}", "password": "${{ secrets.GITHUB_TOKEN }}"}]'
-          repositories: '[{"id": "github", "url": "https://maven.pkg.github.com/otordzdl/infinite-growth-automation-core"}]'
-          
-         
+          repositories: '[{ "id": "some-repository", "url": "http://some.repository.url" }]'
+          plugin_repositories: '[{ "id": "some-plugin-repository", "url": "http://some.plugin.repository.url" }]'
+          servers: '[{ "id": "some-server", "username": "some.user", "password": "some.password" }]'
+                 
 
 
       - name: revisar m2
