@@ -1,23 +1,6 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 <suite name="Ejemplo de Prueba Infiti Growth" parallel="tests" thread-count="1">
 
-
-    <test name="Prueba E2E Exitosa">
-        <classes>
-            <class name="tests.E2ETest">
-                <methods>
-                    <include name="compraProductosExitosa"/>
-                </methods>
-            </class>
-        </classes>
-        <parameter name="url" value="https://www.saucedemo.com/"/>
-        <parameter name="user" value="standard_user"/>
-        <parameter name="password" value="secret_sauce"/>
-        <parameter name="browser" value="chrome"/>
-        <parameter name="products" value="Sauce Labs Onesie|Sauce Labs Bike Light|Sauce Labs Fleece Jacket"/>
-    </test>
-
-
     <parameter name="url" value="https://www.mercadolibre.com.mx/"/>
     <test name="Validacion de Scheme de /deparments">
         <classes>
@@ -42,10 +25,11 @@
             <class name="tests.ServiceTest">
                 <methods>
                     <include name="validacionDepartamentoEspecifico"/>
+                    <parameter name="departamento" value="Tecnología"/>
                 </methods>
             </class>
         </classes>
-        <parameter name="departamento" value="Tecnología"/>
+
     </test>
 
     <test name="Login con standard user">
@@ -55,12 +39,14 @@
                 <methods>
                     <include name="loginExitoso"/>
                 </methods>
+                <parameter name="url" value="https://www.saucedemo.com/"/>
+                <parameter name="user" value="standard_user"/>
+                <parameter name="password" value="secret_sauce"/>
+
             </class>
+            <parameter name="browser" value="chrome"/>
         </classes>
-        <parameter name="url" value="https://www.saucedemo.com/"/>
-        <parameter name="user" value="standard_user"/>
-        <parameter name="password" value="secret_sauce"/>
-        <parameter name="browser" value="chrome"/>
+
 
     </test>
     <test name="Login con locked_out_user user (Caso Fallido a propósito)">
@@ -69,12 +55,14 @@
                 <methods>
                     <include name="loginExitoso"/>
                 </methods>
+                <parameter name="url" value="https://www.saucedemo.com/"/>
+                <parameter name="user" value="locked_out_user"/>
+                <parameter name="password" value="secret_sauce"/>
+
             </class>
+            <parameter name="browser" value="edge"/>
         </classes>
-        <parameter name="url" value="https://www.saucedemo.com/"/>
-        <parameter name="user" value="locked_out_user"/>
-        <parameter name="password" value="secret_sauce"/>
-        <parameter name="browser" value="edge"/>
+
     </test>
     <test name="Login con problem_user user">
         <classes>
@@ -82,12 +70,14 @@
                 <methods>
                     <include name="loginExitoso"/>
                 </methods>
+                <parameter name="url" value="https://www.saucedemo.com/"/>
+                <parameter name="user" value="problem_user"/>
+                <parameter name="password" value="secret_sauce"/>
+
             </class>
+            <parameter name="browser" value="firefox"/>
         </classes>
-        <parameter name="url" value="https://www.saucedemo.com/"/>
-        <parameter name="user" value="problem_user"/>
-        <parameter name="password" value="secret_sauce"/>
-        <parameter name="browser" value="firefox"/>
+
     </test>
     <test name="Login con performance_glitch_user user">
         <classes>
@@ -95,11 +85,114 @@
                 <methods>
                     <include name="loginExitoso"/>
                 </methods>
+                <parameter name="url" value="https://www.saucedemo.com/"/>
+                <parameter name="user" value="performance_glitch_user"/>
+                <parameter name="password" value="secret_sauce"/>
+
             </class>
+            <parameter name="browser" value="safari"/>
         </classes>
-        <parameter name="url" value="https://www.saucedemo.com/"/>
-        <parameter name="user" value="performance_glitch_user"/>
-        <parameter name="password" value="secret_sauce"/>
-        <parameter name="browser" value="safari"/>
+
     </test>
+
+    <test name="Login fallido por contraseña incorrecta">
+        <classes>
+            <class name="tests.LoginWebTest">
+                <methods>
+                    <include name="loginFallido"/>
+                </methods>
+                <parameter name="url" value="https://www.saucedemo.com/"/>
+                <parameter name="user" value="standard_user"/>
+                <parameter name="password" value="secre"/>
+
+            </class>
+            <parameter name="browser" value="chrome"/>
+        </classes>
+
+    </test>
+    <test name="Login fallido campos en blanco">
+        <classes>
+            <class name="tests.LoginWebTest">
+                <methods>
+                    <include name="loginFallido"/>
+                </methods>
+                <parameter name="url" value="https://www.saucedemo.com/"/>
+                <parameter name="user" value=""/>
+                <parameter name="password" value=""/>
+
+            </class>
+            <parameter name="browser" value="chrome"/>
+        </classes>
+
+    </test>
+    <test name="No Login por usuario bloqueado">
+        <classes>
+            <class name="tests.LoginWebTest">
+                <methods>
+                    <include name="loginFallido"/>
+                </methods>
+                <parameter name="url" value="https://www.saucedemo.com/"/>
+                <parameter name="user" value="locked_out_user"/>
+                <parameter name="password" value="secret_sauce"/>
+
+            </class>
+            <parameter name="browser" value="edge"/>
+        </classes>
+
+    </test>
+
+
+    <test name="Validar que deje agregar varios productos">
+        <classes>
+            <class name="tests.CarritoTest">
+                <methods>
+                    <include name="agregarProductosValidarProductosCarrito"/>
+                </methods>
+            </class>
+            <parameter name="url" value="https://www.saucedemo.com/"/>
+            <parameter name="user" value="standard_user"/>
+            <parameter name="password" value="secret_sauce"/>
+
+            <parameter name="products" value="Sauce Labs Onesie|Sauce Labs Bike Light|Sauce Labs Fleece Jacket"/>
+        </classes>
+        <parameter name="browser" value="chrome"/>
+    </test>
+
+
+    <test name="Validar que permita remover productos agregados y se actualice el numero de productos en carrito">
+        <classes>
+            <class name="tests.CarritoTest">
+                <methods>
+                    <include name="agregarRemoverProductosValidarProductosCarrito"/>
+                </methods>
+                <parameter name="url" value="https://www.saucedemo.com/"/>
+                <parameter name="user" value="standard_user"/>
+                <parameter name="password" value="secret_sauce"/>
+
+                <parameter name="products" value="Sauce Labs Onesie|Sauce Labs Bike Light|Sauce Labs Fleece Jacket"/>
+            </class>
+            <parameter name="browser" value="chrome"/>
+        </classes>
+
+    </test>
+
+
+    <test name="Prueba E2E Exitosa">
+        <classes>
+            <class name="tests.E2ETest">
+                <methods>
+                    <include name="compraProductosExitosa"/>
+                </methods>
+                <parameter name="url" value="https://www.saucedemo.com/"/>
+                <parameter name="user" value="standard_user"/>
+                <parameter name="password" value="secret_sauce"/>
+
+                <parameter name="products" value="Sauce Labs Onesie|Sauce Labs Bike Light|Sauce Labs Fleece Jacket"/>
+
+            </class>
+            <parameter name="browser" value="chrome"/>
+        </classes>
+
+    </test>
+
 </suite>

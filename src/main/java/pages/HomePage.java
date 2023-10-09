@@ -2,6 +2,7 @@ package pages;
 
 import io.github.otordzdl.infinitegrowth.core.selenium.Wrapper;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.testng.Assert;
 
 public class HomePage {
@@ -35,13 +36,16 @@ public class HomePage {
 
     public void validateShoppingCartBadge(int productsAdded) {
         String actualProductsAddedString = wrapper.getTextFromElement(shoppingCartBadge);
+        JavascriptExecutor js;
         int actualProductsAdded;
         try {
             actualProductsAdded = Integer.parseInt(actualProductsAddedString);
         } catch (Exception e) {
             actualProductsAdded = 0;
         }
-
+        js=(JavascriptExecutor) wrapper.getDriver();
+        js.executeScript("arguments[0].scrollIntoView({behavior: 'smooth', block: 'center'});", wrapper.getDriver().findElement(shoppingCartBadge));
+        wrapper.waitElementVisible(shoppingCartBadge);
         Assert.assertEquals(actualProductsAdded,productsAdded,"Validar Productos en Carrito");
 
     }
