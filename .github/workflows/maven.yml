@@ -34,7 +34,6 @@ jobs:
         uses:  whelk-io/maven-settings-xml-action@v21
         with:
           repositories: '[{ "id": "github", "url": "https://maven.pkg.github.com/otordzdl/infinite-growth-automation-core" }]'
-          plugin_repositories: '[{ "id": "some-plugin-repository", "url": "http://some.plugin.repository.url" }]'
           servers: '[{ "id": "github", "username": "some.user", "password": "${GITHUB_TOKEN}" }]'
                  
 
