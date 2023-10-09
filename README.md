@@ -73,10 +73,10 @@ git clone https://github.com/otordzdl/infinite-growth-automation-framework-proje
 ## Estructura repositorio
     .
     ├── .github
-    │   └── workflows                                # Load and stress tests
-    │       └── maven.yml                            # Load and stress tests
-    ├── src                                          # Test files (alternatively `spec` or `tests`)
-    │   └── main                                     # Load and stress tests
+    │   └── workflows                                # Carpeta de workflows de github
+    │       └── maven.yml                            # workflow para ejecución en github o en CICD
+    ├── src                                          # Carpeta de src
+    │   └── main                                     
     │   │    ├── pages                               # Package de Pages Objects
     │   │    │      ├── CheckoutCompletePage.java    
     │   │    │      ├── CheckoutOverviewPage.java    
