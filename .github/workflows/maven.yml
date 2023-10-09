@@ -35,7 +35,6 @@ jobs:
         with:
           name: reporte-extent.html
           retention-days: 20
-        
         env:
           GITHUB_TOKEN: ${{ secrets.MAVEN_GITHUB_TOKEN }}
           GITHUB_USERNAME: ${{ secrets.MAVEN_GITHUB_USERNAME }}
